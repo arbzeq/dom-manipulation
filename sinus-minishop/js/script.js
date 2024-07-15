@@ -37,3 +37,55 @@ for(button of allButtons){
     button.innerText = "add  to cart";
 }
 
+let homeLink = document.querySelector("body > header > nav > a:first-of-type");
+
+homeLink.classList.add("active");
+homeLink.className += " active2";
+homeLink.classList.add("active3");
+
+let logoElement = document.querySelector("body > header > img:first-of-type");
+//logoElement.classList.remove("logo");
+
+let headerNav = document.querySelector("body > header > nav:first-of-type");
+//console.log(headerNav.children);
+//console.log(headerNav.childNodes);
+let newElement = document.createElement("a");
+newElement.innerText = "New";
+
+//headerNav.insertBefore(newElement, headerNav.children[0]);
+//headerNav.children[0].insertAdjacentElement("afterend",newElement)
+//headerNav.appendChild(newElement);
+
+let mainElement = document.querySelector("main");
+//console.log(mainElement);
+
+var newArticleElement = document.createElement("article");
+newArticleElement.classList.add("art-4")
+newArticleElement.innerHTML = `
+    <figure><img src="img/hoodie-forrest.png" alt="hoodie"></figure>
+    <h2>Sinus Hoodie</h2>
+    <h3>Forrest</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dolores.</p>
+    <button>buy</button>
+`
+
+mainElement.appendChild(newArticleElement);
+
+
+let headerImageElement = document.getElementsByClassName("logo");
+
+headerImageElement[0].addEventListener('click', (ev) => {
+    console.log("Found ya");
+})
+
+
+let articleElements = document.querySelectorAll("body > main > article");
+
+articleElements.forEach(article => {
+    article.addEventListener('click', (ev) => {
+        
+        let articleH3Text = article.getElementsByTagName("H3")[0].innerText;
+    console.log(`Hi, I'm article ${articleH3Text}`);
+    });
+    
+})
